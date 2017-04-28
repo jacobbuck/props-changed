@@ -16,10 +16,7 @@ module.exports = function propsChanged(propNames, objectA, objectB) {
   var propName;
   while (i--) {
     propName = propNames[i];
-    if (
-      objectA.hasOwnProperty(propName) !== objectB.hasOwnProperty(propName) ||
-      objectA[propName] !== objectB[propName]
-    ) {
+    if (objectA[propName] !== objectB[propName]) {
       return true;
     }
   }
