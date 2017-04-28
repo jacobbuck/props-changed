@@ -1,6 +1,6 @@
 # props-changed
 
-Shallow equals check if specified properties of two objects have changed.
+Shallow equals compare if specified properties of two objects are different.
 
 ## Usage
 
