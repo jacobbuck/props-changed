@@ -1,0 +1,29 @@
+{
+  "name": "props-changed",
+  "version": "1.0.0",
+  "description": "Shallow equals compare if specified properties of two objects are different.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobbuck/props-changed.git"
+  },
+  "keywords": [
+    "compare",
+    "comparison",
+    "diff",
+    "equal",
+    "object",
+    "properties",
+    "props",
+    "shallow"
+  ],
+  "author": "Jacob Buck <buck.jacob@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacobbuck/props-changed/issues"
+  },
+  "homepage": "https://github.com/jacobbuck/props-changed#readme"
+}
