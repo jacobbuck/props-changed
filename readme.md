@@ -27,7 +27,19 @@ propsChanged(['x'], { x: 1, y: 1 }, { x: 1, y: 2 })
 
 propsChanged(['x', 'y'], { x: 1, y: 1 }, { x: 1, y: 2 })
 // returns true
+```
 
-propsChanged(['x', 'z'], { x: 1, y: 1 }, { x: 1, y: 2 })
-// returns false
+Also works well with React components
+
+```js
+import propsChanged from 'props-changed';
+import React from 'react';
+
+class MyComponent extends React.Component {
+  …
+  shouldComponentUpdate(nextProps) {
+    return propsChanged(['x', 'y'], this.props, nextProps);
+  }
+  …
+};
 ```
