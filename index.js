@@ -1,13 +1,13 @@
 'use strict';
 
-modules.exports = function propsChanged(propNames, aObj, bObj) {
-  if (aObj === bObj) {
+module.exports = function propsChanged(propNames, objectA, objectB) {
+  if (objectA === objectB) {
     return false;
   }
 
   if (
-    typeof objA !== 'object' || objA === null ||
-    typeof objB !== 'object' || objB === null
+    typeof objectA !== 'object' || objectA === null ||
+    typeof objectB !== 'object' || objectB === null
   ) {
     return true;
   }
@@ -17,8 +17,8 @@ modules.exports = function propsChanged(propNames, aObj, bObj) {
   while (i--) {
     propName = propNames[i];
     if (
-      aObj.hasOwnProperty(propName) !== bObj.hasOwnProperty(propName) ||
-      aObj[propName] !== bObj[propName]
+      objectA.hasOwnProperty(propName) !== objectB.hasOwnProperty(propName) ||
+      objectA[propName] !== objectB[propName]
     ) {
       return true;
     }
