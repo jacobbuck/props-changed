@@ -15,7 +15,7 @@ propsChanged(propNames, objectA, objectB)
 
 ### Return value
 
-`true` if the values at each property name are equivalent, else `false`.
+`true` if any of the values at each property name are different, else `false`.
 
 ## Examples
 
@@ -28,6 +28,6 @@ propsChanged(['x'], { x: 1, y: 1 }, { x: 1, y: 2 })
 propsChanged(['x', 'y'], { x: 1, y: 1 }, { x: 1, y: 2 })
 // returns true
 
-propsChanged(['z'], { x: 1, y: 1 }, { x: 1, y: 2 })
-// returns true
+propsChanged(['x', 'z'], { x: 1, y: 1 }, { x: 1, y: 2 })
+// returns false
 ```
