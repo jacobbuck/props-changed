@@ -1,10 +1,15 @@
 {
   "name": "props-changed",
   "version": "1.0.0",
-  "description": "Shallow equals compare if specified properties of two objects are different.",
-  "main": "index.js",
+  "description":
+    "Shallow equals compare if specified properties of two objects are different.",
+  "main": "lib/index.js",
+  "files": ["lib"],
   "scripts": {
-    "test": "mocha"
+    "build": "babel --out-dir lib src",
+    "precommit": "lint-staged",
+    "prepare": "npm run build",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -27,7 +32,16 @@
   },
   "homepage": "https://github.com/jacobbuck/props-changed",
   "devDependencies": {
-    "expect": "^1.20.2",
-    "mocha": "^3.3.0"
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "husky": "^0.14.3",
+    "jest": "^22.4.2",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1"
+  },
+  "dependencies": {
+    "arrify": "^1.0.1",
+    "curry": "^1.2.0"
   }
 }
