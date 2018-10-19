@@ -1,4 +1,4 @@
-import propsChanged from '.';
+import propsChanged from '..';
 
 test('compares objects', function() {
   expect(propsChanged(['x'], { x: 1, y: 1 }, { x: 1, y: 2 })).toBe(false);
