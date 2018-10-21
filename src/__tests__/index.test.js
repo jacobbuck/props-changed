@@ -5,6 +5,12 @@ test('compares objects', () => {
   expect(propsChanged(['x', 'y'], { x: 1, y: 1 }, { x: 1, y: 2 })).toBe(true);
 });
 
+test('compares null', () => {
+  expect(propsChanged(['x'], { x: 1, y: 1 }, null)).toBe(true);
+  expect(propsChanged(['x'], null, { x: 1, y: 2 })).toBe(true);
+  expect(propsChanged(['x'], null, null)).toBe(false);
+});
+
 test('compares objects with propNames passed as string', () => {
   expect(propsChanged('x', { x: 1, y: 1 }, { x: 1, y: 2 })).toBe(false);
   expect(propsChanged('y', { x: 1, y: 1 }, { x: 1, y: 2 })).toBe(true);
