@@ -16,7 +16,7 @@ const propsChanged = (propNames, objectA, objectB) => {
   }
 
   return arrify(propNames).some(
-    propName => objectA[propName] !== objectB[propName]
+    propName => !Object.is(objectA[propName], objectB[propName])
   );
 };
 
