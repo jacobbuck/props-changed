@@ -2,7 +2,7 @@ import arrify from 'arrify';
 import curry from 'curry';
 
 const propsChanged = (propNames, objectA, objectB) => {
-  if (objectA === objectB) {
+  if (Object.is(objectA, objectB)) {
     return false;
   }
 
