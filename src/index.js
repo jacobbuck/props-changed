@@ -8,8 +8,8 @@ const propsChanged = (propNames, objectA, objectB) => {
 
   if (
     typeof objectA !== 'object' ||
-    objectA === null ||
     typeof objectB !== 'object' ||
+    objectA === null ||
     objectB === null
   ) {
     return true;
