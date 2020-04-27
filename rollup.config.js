@@ -6,6 +6,6 @@ export default {
     file: 'lib/index.js',
     format: 'cjs',
   },
-  external: ['arrify', 'curry'],
+  external: ['curry'],
   plugins: [babel()],
 };

@@ -1,5 +1,6 @@
-import arrify from 'arrify';
 import curry from 'curry';
+
+const castArray = (value) => (Array.isArray(value) ? value : [value]);
 
 const propsChanged = (propNames, objectA, objectB) => {
   if (Object.is(objectA, objectB)) {
@@ -15,8 +16,8 @@ const propsChanged = (propNames, objectA, objectB) => {
     return true;
   }
 
-  return arrify(propNames).some(
-    propName => !Object.is(objectA[propName], objectB[propName])
+  return castArray(propNames).some(
+    (propName) => !Object.is(objectA[propName], objectB[propName])
   );
 };
 

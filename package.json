@@ -42,7 +42,6 @@
     "rollup-plugin-babel": "^4.4.0"
   },
   "dependencies": {
-    "arrify": "^2.0.1",
     "curry": "^1.2.0"
   },
   "husky": {
