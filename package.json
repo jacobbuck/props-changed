@@ -1,6 +1,6 @@
 {
   "name": "props-changed",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Shallow equals compare if specified properties of two objects are different.",
   "main": "lib/index.js",
   "files": [
