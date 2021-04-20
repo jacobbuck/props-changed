@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- Set `"sideEffects": false` in [package.json](./package.json).
+
+### Changed
+
+- Updated devDependencies.
+
 ## 2.1.0 - 2020-04-27
 
 ### Changed
