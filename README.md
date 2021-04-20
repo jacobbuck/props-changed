@@ -5,7 +5,7 @@ Shallow equals compare if specified properties of two objects are different.
 ## Usage
 
 ```js
-propsChanged(propNames, objectA, objectB)
+propsChanged(propNames, objectA, objectB);
 ```
 
 ### Parameters
@@ -22,10 +22,10 @@ propsChanged(propNames, objectA, objectB)
 ```js
 import propsChanged from 'props-changed';
 
-propsChanged(['x'], { x: 1, y: 1 }, { x: 1, y: 2 })
+propsChanged(['x'], { x: 1, y: 1 }, { x: 1, y: 2 });
 // returns false
 
-propsChanged(['x', 'y'], { x: 1, y: 1 }, { x: 1, y: 2 })
+propsChanged(['x', 'y'], { x: 1, y: 1 }, { x: 1, y: 2 });
 // returns true
 ```
 
