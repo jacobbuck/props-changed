@@ -7,6 +7,10 @@
 - Added ES Module build.
 - Added source maps to build output.
 
+### Changed
+
+- Enabled loose mode on '@babel/preset-env' to reduce build output.
+
 ## 2.1.1 - 2021-04-20
 
 ### Added
