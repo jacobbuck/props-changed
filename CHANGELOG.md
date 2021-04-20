@@ -5,6 +5,7 @@
 ### Added
 
 - Added ES Module build.
+- Added source maps to build output.
 
 ## 2.1.1 - 2021-04-20
 
