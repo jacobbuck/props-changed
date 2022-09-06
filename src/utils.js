@@ -13,9 +13,12 @@ export const path = (path, obj) =>
     obj
   );
 
-export const pathsEq = (paths, objA, objB) =>
+export const pathsEqWith = (comparitor, paths, objA, objB) =>
   !objA || !objB || typeof objA !== 'object' || typeof objB !== 'object'
     ? false
     : objA === objB
     ? true
-    : !paths.every((p) => Object.is(path(p, objA), path(p, objB)));
+    : paths.every((p) => comparitor(path(p, objA), path(p, objB)));
+
+export const pathsEq = (paths, objA, objB) =>
+  pathsEqWith(Object.is, paths, objA, objB);
