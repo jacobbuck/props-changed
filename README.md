@@ -1,45 +1,96 @@
 # props-changed
 
-Shallow equals compare if specified properties of two objects are different.
+Compare if specified properties of two objects are different.
 
 ## Usage
 
 ```js
-propsChanged(propNames, objectA, objectB);
+import { propChanged, propsChanged } from 'props-changed';
 ```
 
-### Parameters
+### `propChanged`
 
-- `propNames` array of properties to check
-- `objectA` and `objectB` objects to compare
-
-### Return value
-
-`true` if any of the values at each property name are different, else `false`.
-
-## Examples
+Compares a single property between two objects.
 
 ```js
-import propsChanged from 'props-changed';
-
-propsChanged(['x'], { x: 1, y: 1 }, { x: 1, y: 2 });
-// returns false
-
-propsChanged(['x', 'y'], { x: 1, y: 1 }, { x: 1, y: 2 });
-// returns true
+propChanged(prop, objA, objB);
 ```
 
-Also works well with React components
+#### Parameters
+
+- `prop` property name or path to compare
+- `obtA` object to compare
+- `objB` other object to compare
+
+#### Returns
+
+`true` if any of the values at property are different, else `false`.
+
+#### Examples
+
+Property name as string
 
 ```js
-import propsChanged from 'props-changed';
-import React from 'react';
+propChanged('x', { x: 1 }, { x: 2 }); // true
+```
 
-class MyComponent extends React.Component {
-  …
-  shouldComponentUpdate(nextProps) {
-    return propsChanged(['x', 'y'], this.props, nextProps);
-  }
-  …
-};
+Property path as string
+
+```js
+propChanged('x.y', { x: { y: 1 } }, { x: { y: 2 } }); // true
+```
+
+Property path as array
+
+```js
+propChanged(['x', 'y'], { x: { y: 1 } }, { x: { y: 2 } }); // true
+```
+
+### `propsChanged`
+
+Compares multiple properties between two objects.
+
+```js
+propsChanged(props, objA, objB);
+```
+
+#### Parameters
+
+- `props` array of property names and/or paths to compare
+- `obtA` object to compare
+- `objB` other object to compare
+
+#### Returns
+
+`true` if any of the values at each property are different, else `false`.
+
+#### Examples
+
+Property names as strings
+
+```js
+propsChanged(['x', 'y'], { x: 1, y: 1 }, { x: 1, y: 2 }); // true
+```
+
+Property paths as strings
+
+```js
+propChanged(['x', 'y.z'], { x: 1, y: { z: 1 } }, { x: 1, y: { z: 2 } }); // true
+```
+
+Property paths as arrays
+
+```js
+propChanged([['x'], ['y', 'z']], { x: 1, y: { z: 1 } }, { x: 1, y: { z: 2 } }); // true
+```
+
+## Currying
+
+All functions have auto-currying to make functional programming easier. For example:
+
+```js
+const xChanged = propChanged('x');
+
+xChanged({ x: 1 }, { x: 2 }); // true
+xChanged({ x: 1 })({ x: 2 }); // true
 ```
