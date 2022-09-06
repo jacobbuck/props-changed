@@ -1,24 +1,9 @@
-import curry from 'curry';
+import { curry, pathsEq } from './utils';
 
-const castArray = (value) => (Array.isArray(value) ? value : [value]);
+export const propChanged = curry(
+  (prop, objA, objB) => !pathsEq([prop], objA, objB)
+);
 
-const propsChanged = (propNames, objectA, objectB) => {
-  if (Object.is(objectA, objectB)) {
-    return false;
-  }
-
-  if (
-    typeof objectA !== 'object' ||
-    typeof objectB !== 'object' ||
-    objectA === null ||
-    objectB === null
-  ) {
-    return true;
-  }
-
-  return castArray(propNames).some(
-    (propName) => !Object.is(objectA[propName], objectB[propName])
-  );
-};
-
-export default curry(propsChanged);
+export const propsChanged = curry(
+  (props, objA, objB) => !pathsEq(props, objA, objB)
+);
