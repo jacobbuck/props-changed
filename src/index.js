@@ -1,12 +1,4 @@
-import { curry, pathsEq, pathsEqWith } from './utils';
-
-export const propChanged = curry(
-  (prop, objA, objB) => !pathsEq([prop], objA, objB)
-);
-
-export const propsChanged = curry(
-  (props, objA, objB) => !pathsEq(props, objA, objB)
-);
+import { curry, pathsEqWith } from './utils';
 
 export const propChangedWith = curry(
   (comparator, prop, objA, objB) => !pathsEqWith(comparator, [prop], objA, objB)
@@ -15,3 +7,7 @@ export const propChangedWith = curry(
 export const propsChangedWith = curry(
   (comparator, props, objA, objB) => !pathsEqWith(comparator, props, objA, objB)
 );
+
+export const propChanged = propChangedWith(Object.is);
+
+export const propsChanged = propsChangedWith(Object.is);
