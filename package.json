@@ -29,7 +29,9 @@
     "object",
     "properties",
     "props",
-    "shallow"
+    "react",
+    "shallow",
+    "utility"
   ],
   "author": "Jacob Buck <buck.jacob@gmail.com>",
   "license": "MIT",
