@@ -1,11 +1,4 @@
-import { propChanged, propsChanged } from '..';
-
-describe('propChanged', () => {
-  test('compares objects with a single propName passed as string', () => {
-    expect(propChanged('x', { x: 1, y: 1 }, { x: 1, y: 2 })).toBe(false);
-    expect(propChanged('y', { x: 1, y: 1 }, { x: 1, y: 2 })).toBe(true);
-  });
-});
+import { propsChanged } from '..';
 
 describe('propsChanged', () => {
   test('compares objects', () => {

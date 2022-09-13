@@ -5,13 +5,11 @@
 ### Added
 
 - Added property path support for comparing nested objects.
-- Added `propChanged` for comparing a single property.
-- Added `propChangedWith` for comparing a single property with a comparator function.
-- Added `propsChangedWith` for comparing multiple properties with a comparator function.
+- Added `propsEqual` for comparing if all properties are equal.
 
 ### Removed
 
-- **BREAKING** Removed single property support from `propsChanged`—use `propChanged` instead.
+- **BREAKING** Removed single property support from `propsChanged`.
 - **BREAKING** Removed `propsChanged` as default export.
 
 ## 2.2.0 - 2021-04-20
