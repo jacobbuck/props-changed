@@ -80,3 +80,21 @@ const xChanged = propsChanged(['x']);
 xChanged({ x: 1 }, { x: 2 }); // true
 xChanged({ x: 1 })({ x: 2 }); // true
 ```
+
+## React
+
+`propsChanged` was created for use with the `React.Component` method [`shouldComponentUpdate()`](https://reactjs.org/docs/react-component.html#shouldcomponentupdate):
+
+```js
+class MyComponent extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    return propsChanged(['x', 'y'], this.props, nextProps);
+  }
+}
+```
+
+`propsEqual` can be used for [`React.memo`](https://reactjs.org/docs/react-api.html#reactmemo) with currying:
+
+```js
+const MemoedComponent = React.memo(MyComponent, propsEqual(['x', 'y']));
+```
