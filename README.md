@@ -1,6 +1,6 @@
 # props-changed
 
-Compare if specified properties of two objects are different.
+Compare values at specified properties between objects.
 
 ## Usage
 
@@ -10,7 +10,7 @@ import { propsChanged, propsEqual } from 'props-changed';
 
 ### `propsChanged`
 
-Compares properties between two objects are different.
+Determines if any values between objects at specified properties are not the [same](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value_equality_using_object.is).
 
 ```js
 propsChanged(props, objA, objB);
@@ -48,10 +48,10 @@ propsChanged([['x'], ['y', 'z']], { x: 1, y: { z: 1 } }, { x: 1, y: { z: 2 } });
 
 ### `propsEqual`
 
-Compares multiple properties between two objects.
+Determines if all values between objects at specified properties are the [same](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value_equality_using_object.is).
 
 ```js
-propsChanged(props, objA, objB);
+propsEqual(props, objA, objB);
 ```
 
 #### Parameters
