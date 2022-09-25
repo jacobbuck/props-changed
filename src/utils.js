@@ -1,7 +1,8 @@
 export const curry = (fn) =>
   function next() {
-    const args = arguments;
-    return args.length >= fn.length ? fn(...args) : next.bind(next, ...args);
+    return arguments.length >= fn.length
+      ? fn(...arguments)
+      : next.bind(next, ...arguments);
   };
 
 export const path = (path, obj) =>
