@@ -7,6 +7,10 @@
 - Added property path support for comparing nested objects.
 - Added `propsEqual` for comparing if all properties are equal.
 
+### Changed
+
+- Replaced [curry](https://www.npmjs.com/package/curry) with dependency with internal function.
+
 ### Removed
 
 - **BREAKING** Removed single property support from `propsChanged`.
