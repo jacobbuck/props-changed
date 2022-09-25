@@ -19,7 +19,7 @@ propsChanged(props, objA, objB);
 #### Parameters
 
 - `props` array of property names and/or paths to compare
-- `obtA` object to compare
+- `objA` object to compare
 - `objB` other object to compare
 
 #### Returns
@@ -57,7 +57,7 @@ propsEqual(props, objA, objB);
 #### Parameters
 
 - `props` array of property names and/or paths to compare
-- `obtA` object to compare
+- `objA` object to compare
 - `objB` other object to compare
 
 #### Returns
