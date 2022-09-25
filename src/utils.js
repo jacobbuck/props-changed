@@ -1,10 +1,8 @@
-export const curry = (fn) => {
-  const curried = (...args) =>
-    args.length >= fn.length
-      ? fn(...args)
-      : (...args2) => curried(...args, ...args2);
-  return curried;
-};
+export const curry = (fn) =>
+  function next() {
+    const args = arguments;
+    return args.length >= fn.length ? fn(...args) : next.bind(next, ...args);
+  };
 
 export const path = (path, obj) =>
   (typeof path === 'string' ? path.split('.') : path).reduce(
