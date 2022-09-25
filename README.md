@@ -31,7 +31,7 @@ propsChanged(props, objA, objB);
 Property names as strings
 
 ```js
-propsChanged(['x', 'y'], { x: 1, y: 1 }, { x: 1, y: 2 }); // true
+propsChanged(['y'], { x: 1, y: 1 }, { x: 1, y: 2 }); // true
 ```
 
 Property paths as strings
@@ -67,7 +67,7 @@ propsChanged(props, objA, objB);
 #### Examples
 
 ```js
-propsEqual(['x', 'y'], { x: 1, y: 1 }, { x: 1, y: 2 }); // true
+propsEqual(['x'], { x: 1, y: 1 }, { x: 1, y: 2 }); // true
 ```
 
 ## Currying
