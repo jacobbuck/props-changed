@@ -1,7 +1,7 @@
 {
   "name": "props-changed",
   "version": "3.0.0",
-  "description": "Compare specified properties between two objects.",
+  "description": "Compare values at specified properties between objects.",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "files": [
